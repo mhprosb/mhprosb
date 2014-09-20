@@ -150,3 +150,4 @@ DEPENDENCIES
   middleman-autoprefixer
   middleman-imageoptim
   middleman-livereload
+  middleman-sprockets

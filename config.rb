@@ -1,9 +1,7 @@
 
 # Change Compass configuration
 compass_config do |config|
-  require "bootstrap-sass"
   # config.output_style = :compact
-  # config.add_import_path File.join root, 'bower/bootstrap-sass-official/assets/stylesheets'
   config.add_import_path File.join root, 'bower/bootswatch-scss'
 end
 
@@ -12,6 +10,16 @@ activate :autoprefixer do |config|
   config.browsers = ['last 2 versions', 'Explorer >= 9']
   config.inline   = true
 end
+
+# asset pipeline
+activate :sprockets
+sprockets.append_path File.join root, 'bower'
+sprockets.import_asset 'jquery'
+sprockets.import_asset 'jquery-easing'
+sprockets.import_asset 'jquery-waypoints'
+sprockets.import_asset 'jquery-backstretch'
+sprockets.import_asset 'stellar'
+sprockets.import_asset 'wow'
 
 # Reload the browser automatically whenever files change
 activate :livereload

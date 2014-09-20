@@ -10,11 +10,12 @@ gem "middleman"
 gem "middleman-autoprefixer"
 gem "middleman-livereload"
 gem "middleman-imageoptim"
+gem "middleman-sprockets"
 
 gem "coffee-script"
 
 gem "compass", "~>1.0.0"
-gem "bootstrap-sass"
+gem "bootstrap-sass", :require => false
 #
 # gem "scut"
 # gem "color-schemer"
