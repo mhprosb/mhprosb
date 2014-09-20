@@ -16,6 +16,9 @@ end
 # Reload the browser automatically whenever files change
 activate :livereload
 
+# Localization
+activate :i18n, :mount_at_root => :en
+
 # Enable cache buster
 # activate :asset_hash
 

@@ -15,7 +15,7 @@ body {
   font-family: 'Raleway', 'Lato', Helvetica, Arial, sans-serif;
   background: #FFF;
   font-weight: 100;
-  height: 100%;
+  // height: 100%;
   margin: 0;
   padding: 0;
   color: #94a3a8;
@@ -84,7 +84,7 @@ a:focus { color: #5173bd }
   left: 0;
   right: 0;
   bottom: 0;
-  height: 5px;
+  height: 10px;
   width: 100%;
   background: #fff;
   opacity: 1;
@@ -104,7 +104,7 @@ a:focus { color: #5173bd }
   left: 0px;
   top: 0px;
   height: 100%;
-  background: #2ecc71;
+  background: #555;
 }
 
 .pace.pace-inactive {
@@ -144,7 +144,7 @@ a:focus { color: #5173bd }
   padding: 80px 15px;
   color: #FFF;
   text-align: center;
-  text-shadow: 0 1px 0 rgba(#000, .1);
+  // text-shadow: 0 1px 0 rgba(#000, .1);
   background: url("../img/mhp/header.jpg") no-repeat center center;
   background-size: cover;
   height: 100%;
@@ -167,7 +167,7 @@ a:focus { color: #5173bd }
   text-align: center;
 
   img {
-    max-width: 100%;
+    max-width: 60%;
   }
 }
 
@@ -253,7 +253,8 @@ a:focus { color: #5173bd }
 .section-title {
   text-align: center;
   margin-top: 60px;
-  margin-bottom: 30px;
+  // margin-bottom: 30px;
+  margin-bottom: 60px;
 }
 
 .section-title h2 { color: #384047 }
@@ -412,7 +413,7 @@ a:focus { color: #5173bd }
   color: #FFF;
   text-align: center;
   text-shadow: 0 1px 0 rgba(#000, .1);
-  background: url("../img/mhp/footer.jpg") fixed no-repeat center center;
+  background: url("../img/mhp/footer.jpg") no-repeat center center;
   background-size: cover;
   overflow: hidden;
 
