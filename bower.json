@@ -1,0 +1,14 @@
+{
+  "name": "MH Pro",
+  "description": "The official MH Pro website.",
+  "version": "0.0.1",
+  "homepage": "http://taufikandtailor.github.io",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "bootswatch-scss": "~3.2.0"
+  },
+  "resolutions": {
+    "bootstrap-sass-official": "~3.2.0+2"
+  }
+}
