@@ -13,7 +13,8 @@
     "jquery-easing": "*",
     "stellar": "~0.6.2",
     "jquery-waypoints": "~2.0.5",
-    "jquery-backstretch": "~2.0.4"
+    "jquery-backstretch": "~2.0.4",
+    "ScrollIt": "*"
   },
   "resolutions": {
     "bootstrap-sass-official": "~3.2.0+2",

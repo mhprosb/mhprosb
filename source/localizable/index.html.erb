@@ -1,17 +1,17 @@
     <!-- Preloader -->
     <div class="preloader"></div>
     <!-- Background Pattern -->
-    <div class="bg-pattern bg-pattern-diag"></div>
+    <div class="bg-pattern bg-pattern-vertical"></div>
     <!-- Backstretch Carousel -->
     <div class="backstretch-carousel"></div>
 
-    <div class="small-logo">
+    <header class="small-logo" role="header">
       <a href="#top" class="logo gototop"><img alt="logo" src="/assets/img/mhp/logo_white_small.png"></a>
       <nav>
         <a href="/" class="lang_ms"><i class="fa fa-flag"></i> Malay</a>
         <a href="/en" class="lang_en"><i class="fa fa-flag"></i> English</a>
       </nav>
-    </div>
+    </header>
 
     <!-- ******************** MASTHEAD SECTION ******************** -->
     <main class="masthead screen" id="top" role="main">
@@ -39,10 +39,22 @@
     <main class="hero screen" id="explore">
       <div class="container">
         <div class="section-title">
-          <i class="fa fa-send wow fadeInDownBig showdelay2"></i>
+          <i class="fa fa-send wow fadeInDown showdelay2"></i>
           <h2 class="wow flipInX showdelay3"><%= t(:passion) %></h2>
           <h4 class="wow fadeInDown showdelay4"><%= t(:passion_sub) %></h4>
         </div>
+
+        <p class="lyrics wow fadeInRight showdelay5">
+          Dalam diri selembut sutera<br>
+          Kau miliki <strong>iman yang teguh</strong><br>
+          Kau nyalakan obor agama dirimu bak lentera<br>
+          dibelengu jahiliah kau tempuh dengan berani<br>
+          Walau pun jasadmu milik tuan<br>
+          Tetapi <strong>hatimu milik Tuhan</strong>
+        </p>
+        <p class="cite wow flipInX showdelay9">
+          Munif Ahmad &amp; ITO Lara, &lsquo;04
+        </p>
       </div>
     </main>
 
@@ -50,8 +62,8 @@
     <main class="masterpiece screen">
       <div class="container">
         <div class="section-title">
-          <!-- <i class="fa fa-microphone wow bounceInLeft showdelay3"></i> -->
-          <h1 class="wow bounceInLeft showdelay5"><%= t(:masterpiece) %></h1>
+          <i class="fa fa-quote-left wow fadeInLeft showdelay6"></i>
+          <h1 class="wow bounceInLeft showdelay3"><%= t(:masterpiece) %></h1>
         </div>
       </div>
       <!--/container -->
@@ -62,6 +74,7 @@
     <main class="team screen" id="team">
       <div class="container">
         <div class="section-title">
+          <i class="fa fa-cubes wow fadeInDown showdelay2"></i>
           <h2 class="wow bounceInLeft showdelay3"><%= t(:family) %></h2>
           <h4 class="wow bounceInRight showdelay5"><%= t(:family_sub) %></h4>
         </div>

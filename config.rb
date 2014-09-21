@@ -14,12 +14,6 @@ end
 # asset pipeline
 activate :sprockets
 sprockets.append_path File.join root, 'bower'
-# sprockets.import_asset 'jquery'
-# sprockets.import_asset 'jquery-easing'
-# sprockets.import_asset 'jquery-waypoints'
-# sprockets.import_asset 'jquery-backstretch'
-# sprockets.import_asset 'stellar'
-# sprockets.import_asset 'wow'
 
 # Reload the browser automatically whenever files change
 activate :livereload
