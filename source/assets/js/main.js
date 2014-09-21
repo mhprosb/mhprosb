@@ -5,7 +5,11 @@
 //= require "wow"
 //= require "stellar"
 
-new WOW().init();
+var wow = new WOW({
+  animateClass: 'animated',
+  offset: 150
+})
+wow.init();
 
 // $.stellar({
 //   horizontalScrolling: false,
@@ -23,24 +27,19 @@ $(function() {
   });
 });
 
-function animCss(el, x) {
-  el.removeClass().addClass(x + ' animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-    $(this).removeClass();
-  });
-};
-
 /*
  * Backstretch Carousel :: Replace with your images if necessary.
  */
 
 $(".backstretch-carousel").backstretch([
   "/assets/img/mhp/screen-bg_3.jpg",
+  "/assets/img/mhp/screen-bg_5.jpg",
+  "/assets/img/mhp/screen-bg_6.jpg",
   "/assets/img/mhp/screen-bg_4.jpg",
-  "/assets/img/mhp/screen-bg_5.jpg"
 ], {
-    duration: 1000,
-    fade: 1000
-  });
+  duration: 1000,
+  fade: 2000
+});
 
 $(".backstretch-carousel").backstretch("pause");
 
@@ -60,4 +59,4 @@ $('#explore').waypoint(function(direction) {
   if (direction === 'up') {
    $(".small-logo").removeClass('show');
   }
-}, { offset: '25%' });
+}, { offset: '50%' });

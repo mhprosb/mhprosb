@@ -2,7 +2,7 @@
 # Change Compass configuration
 compass_config do |config|
   # config.output_style = :compact
-  config.add_import_path File.join root, 'bower/bootswatch-scss'
+  config.add_import_path File.join root, 'bower'
 end
 
 # CSS Autoprefixer
@@ -14,18 +14,18 @@ end
 # asset pipeline
 activate :sprockets
 sprockets.append_path File.join root, 'bower'
-sprockets.import_asset 'jquery'
-sprockets.import_asset 'jquery-easing'
-sprockets.import_asset 'jquery-waypoints'
-sprockets.import_asset 'jquery-backstretch'
-sprockets.import_asset 'stellar'
-sprockets.import_asset 'wow'
+# sprockets.import_asset 'jquery'
+# sprockets.import_asset 'jquery-easing'
+# sprockets.import_asset 'jquery-waypoints'
+# sprockets.import_asset 'jquery-backstretch'
+# sprockets.import_asset 'stellar'
+# sprockets.import_asset 'wow'
 
 # Reload the browser automatically whenever files change
 activate :livereload
 
 # Localization
-activate :i18n, :mount_at_root => :en
+activate :i18n, :mount_at_root => :ms
 
 # Enable cache buster
 # activate :asset_hash

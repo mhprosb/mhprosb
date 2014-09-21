@@ -1,15 +1,18 @@
 ---
 ms:
+  lang: ms
+
   allah: "Allah <strong>Maha Besar.</strong><br>Muhammad <strong>Petunjuk Kami.</strong>"
   scroll: "Skrol Ke Bawah"
 
-  passion: "Kemahiran Kami."
-  passion_sub: "Inilah kembara kami dalam dunia muzik Islam."
+  passion: "Kembara Kami."
+  passion_sub: "Inilah semangat kami dalam dunia muzik Islam."
 
   family: "Keluarga Kami."
   family_sub: "Kami bukan sekadar sebuah syarikat produksi. Kami adalah sebuah keluarga."
 
-  footer: "Kita cuma penyampai sahaja.<br>Karya kita milik <strong>Dia.</strong>"
+  masterpiece: "Kita cuma penyampai sahaja.<br>Karya kita milik <strong>Dia.</strong>"
+
   reserved: "Semua Hakcipta Terpelihara."
 
   bio_munif: "Pengarah Urusan"

@@ -13,16 +13,29 @@
 
     <link rel="shortcut icon" href="/favicon.png">
 
+    <script>
+      paceOptions = {
+        ajax: true,
+        document: true,
+        eventLag: true,
+        elements: {
+          selectors: ['img']
+        }
+      };
+    </script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/pace/0.5.5/pace.min.js"></script>
     <script>
       Pace.on('done', function(){
         setTimeout(function() {
-          $('.preloader').fadeOut();
-        }, 300);
+          $('.preloader').addClass('fadeOutUpBig animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+            $(this).removeClass().addClass('.preloader');
+          });
+        }, 700);
       });
     </script>
 
-    <link href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" rel="stylesheet">
+    <link href="//cdn.jsdelivr.net/animatecss/3.2.0/animate.min.css" rel="stylesheet">
+    <link href="//cdn.jsdelivr.net/fontawesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="/assets/css/styles.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -32,7 +45,7 @@
     <![endif]-->
   </head>
 
-  <body class="<%= page_classes %>">
+  <body class="<%= page_classes %> lang_<%= t(:lang) %>">
 
 <%= yield %>
 
