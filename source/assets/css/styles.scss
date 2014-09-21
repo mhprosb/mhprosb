@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 @import "http://fonts.googleapis.com/css?family=Raleway:100,300,500,600,700";
-@import "http://fonts.googleapis.com/css?family=Lato:100,700,100italic,700italic";
+@import "http://fonts.googleapis.com/css?family=Lato:300,700,300italic,700italic";
 
 $font-family-sans-serif: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 // $font-size-base: 16px;
@@ -458,6 +458,7 @@ a:focus { color: #5173bd }
   .lyrics {
     font-family: "Lato", $font-family-sans-serif;
     font-size: 35px;
+    font-weight: 300;
     line-height: .9;
     font-style: italic;
 

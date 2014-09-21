@@ -4,9 +4,11 @@
 #= require "jquery-backstretch"
 #= require "wow"
 #= require "stellar"
-#= require "ScrollIt"
+#= require "_scrollIt.js"
 
 $ ->
+
+  $.scrollIt()
 
   wow = new WOW(
     offset: 100
