@@ -8,12 +8,21 @@
 
 $ ->
 
-  $.scrollIt()
+  bgImages = [
+    # "http://interfacelift.com/wallpaper/7yz4ma1/03706_chaterdag_1440x900.jpg"
+    # "http://interfacelift.com/wallpaper/7yz4ma1/03703_pastoralroad_1440x900.jpg"
+    # "http://interfacelift.com/wallpaper/7yz4ma1/03711_icelandicroad_1440x900.jpg"
+    "/assets/img/mhp/screen-bg_mixer.jpg"
+    # "http://interfacelift.com/wallpaper/7yz4ma1/03694_thelakeofdarkness_1440x900.jpg"
+    # "http://interfacelift.com/wallpaper/7yz4ma1/03711_icelandicroad_1440x900.jpg"
+    "/assets/img/mhp/screen-bg_river.jpg"
+    "/assets/img/mhp/screen-bg_river-blur.jpg"
+    "/assets/img/mhp/screen-bg_mic.jpg"
+  ]
 
-  wow = new WOW(
-    offset: 100
-  )
-  wow.init()
+  $.scrollIt(easing: "easeInOutQuart")
+
+  new WOW(offset: 100).init()
 
   # $.stellar({
   #   horizontalScrolling: false,
@@ -29,16 +38,11 @@ $ ->
     event.preventDefault()
     return
 
-  $(".backstretch-carousel").backstretch [
-    "/assets/img/mhp/screen-bg_mixer.jpg"
-    "/assets/img/mhp/screen-bg_river.jpg"
-    "/assets/img/mhp/screen-bg_river-blur.jpg"
-    "/assets/img/mhp/screen-bg_mic.jpg"
-  ],
+  $(".backstretch-carousel").backstretch bgImages,
     duration: 1000
     fade: 2000
-
   $(".backstretch-carousel").backstretch "pause"
+
   $(".screen").waypoint ((direction) ->
     $(".backstretch-carousel").backstretch "next"  if direction is "down"
     $(".backstretch-carousel").backstretch "prev"  if direction is "up"
@@ -52,10 +56,5 @@ $ ->
     return
   ),
     offset: "50%"
-
-
-  $(document).keydown (event) ->
-    # if event.which is 32 # spacebar
-
 
   return

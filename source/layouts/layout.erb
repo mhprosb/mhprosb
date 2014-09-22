@@ -28,7 +28,7 @@
       Pace.on('done', function(){
         setTimeout(function() {
           $('.preloader').addClass('fadeOutUpBig animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-            $(this).removeClass().addClass('.preloader');
+            $(this).removeClass().addClass('.preloader').hide();
           });
         }, 700);
       });
