@@ -3,22 +3,21 @@
 @import "http://fonts.googleapis.com/css?family=Raleway:100,300,500,600,700";
 @import "http://fonts.googleapis.com/css?family=Lato:300,700,300italic,700italic";
 
-$font-family-sans-serif: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
-// $font-size-base: 16px;
-$gray-darker:            lighten(#000, 13.5%) !default; // #222
-$gray-dark:              #7b8a8b !default;   // #333
-$gray:                   #95a5a6 !default; // #555
-$gray-light:             #b4bcc2 !default;   // #999
-$gray-lighter:           #ecf0f1 !default; // #eee
+$font-family-sans-serif: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
-$brand-primary:         #2C3E50 !default;
-$brand-success:         #18BC9C !default;
-$brand-info:            #3498DB !default;
-$brand-warning:         #F39C12 !default;
-$brand-danger:          #E74C3C !default;
+$gray-darker:   lighten(#000, 13.5%);
+$gray-dark:     #7b8a8b;
+$gray:          #95a5a6;
+$gray-light:    #b4bcc2;
+$gray-lighter:  #ecf0f1;
+
+$brand-primary: #2C3E50;
+$brand-success: #18BC9C;
+$brand-info:    #3498DB;
+$brand-warning: #F39C12;
+$brand-danger:  #E74C3C;
 
 @import "bootstrap";
-// @import "pace";
 
 // mixins
 
@@ -34,6 +33,7 @@ $brand-danger:          #E74C3C !default;
   transform: translateY(0);
 }
 
+// base styles
 
 html {
   height: 100%;
@@ -71,11 +71,6 @@ h2 {
   font-size: 40px;
   font-weight: 600;
   margin: 15px 0;
-
-  &.salam {
-    font-size: 30px;
-    font-weight: 300;
-  }
 }
 
 h3 {
@@ -107,148 +102,6 @@ a { color: #5173bd }
 
 a:hover,
 a:focus { color: #5173bd }
-
-.preloader {
-  background-color: $brand-primary;
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  z-index: 2000;
-
-  .preloader-log {
-    width: 100%;
-    height: 100%;
-    font-size: 70px;
-    font-weight: 600;
-    vertical-align: middle;
-    text-align: center;
-
-    p {
-      @include center-vertical;
-    }
-  }
-}
-
-.pace {
-  pointer-events: none;
-  user-select: none;
-
-  z-index: 3000;
-  position: fixed;
-  margin: auto;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 10px;
-  width: 100%;
-  background: none;
-  border: 0;
-
-  opacity: 1;
-  visibility: visible;
-  transition: opacity .3s, visibility .3s;
-}
-
-.pace .pace-progress {
-  box-sizing: border-box;
-
-  transition: width 1s ease-in-out 1s linear;
-
-  transform: translate3d(0, 0, 0);
-
-  // max-width: 200px;
-  position: fixed;
-  z-index: 2000;
-  display: block;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  height: 100%;
-  background: #fff;
-}
-
-.pace.pace-inactive {
-  visibility: hidden;
-  opacity: 0;
-}
-
-.backstretch-carousel {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  z-index: -2;
-}
-
-.bg-pattern {
-  background-image: url(../img/mhp/pattern_no.png);
-  background-repeat: repeat;
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  z-index: -1;
-}
-
-.bg-pattern-vertical {
-  background-image: url(../img/mhp/pattern_vertical.png);
-}
-.bg-pattern-diag {
-  background-image: url(../img/mhp/pattern_diag.png);
-}
-.bg-pattern-denim {
-  background-image: url(../img/mhp/pattern_darkdenim.png);
-}
-
-// Animations Delay
-
-.showdelay1 {
-  animation-delay: .1s;
-  transition-delay: .1s;
-}
-.showdelay2 {
-  animation-delay: .2s;
-  transition-delay: .2s;
-}
-.showdelay3 {
-  animation-delay: .3s;
-  transition-delay: .3s;
-}
-.showdelay4 {
-  animation-delay: .4s;
-  transition-delay: .4s;
-}
-.showdelay5 {
-  animation-delay: .5s;
-  transition-delay: .5s;
-}
-.showdelay6 {
-  animation-delay: .6s;
-  transition-delay: .6s;
-}
-.showdelay7 {
-  animation-delay: .7s;
-  transition-delay: .7s;
-}
-.showdelay8 {
-  animation-delay: .8s;
-  transition-delay: .8s;
-}
-.showdelay9 {
-  animation-delay: .9s;
-  transition-delay: .9s;
-}
-.showdelay1s {
-  animation-delay: 1s;
-  transition-delay: 1s;
-}
-.showdelay2s {
-  animation-delay: 2s;
-  transition-delay: 2s;
-}
 
 .btn,
 .btn-lg,
@@ -328,7 +181,6 @@ a:focus { color: #5173bd }
         display: none;
       }
     }
-    // position:
   }
 }
 
@@ -344,11 +196,14 @@ a:focus { color: #5173bd }
   @include center-vertical;
 }
 
-.loading * {
-  animation: none !important;
-}
+.masthead .salam {
+  font-size: 30px;
+  font-weight: 300;
 
-/*animation ends*/
+  img {
+    max-width: 60%;
+  }
+}
 
 .masthead-logo {
   padding: 50px 0;
@@ -405,7 +260,7 @@ a:focus { color: #5173bd }
   padding: 5px 17px;
 }
 
-//Boucing Arrow Animation */
+// Bouncing Arrow Animation
 
 @keyframes arrowBounce {
   from {
@@ -463,7 +318,7 @@ a:focus { color: #5173bd }
   }
 }
 
-/*========== 3. HERO ==============*/
+/*==========HERO==============*/
 
 .hero {
   position: relative;
@@ -495,7 +350,7 @@ a:focus { color: #5173bd }
   }
 }
 
-/*========== 3. MASTERPIECE ==============*/
+/*==========MASTERPIECE==============*/
 
 .masterpiece {
   height: 100%;
@@ -526,7 +381,7 @@ a:focus { color: #5173bd }
 .heroimg img,
 .clientlogo img { max-width: 100% }
 
-/*========== 4. TEAM ==============*/
+/*==========TEAM==============*/
 
 .team {
   height: 100%;
@@ -573,7 +428,7 @@ a:focus { color: #5173bd }
   }
 }
 
-/*==========8. FOOTER ==============*/
+/*==========FOOTER==============*/
 
 .footerlinks {
   text-align: center;
@@ -592,9 +447,104 @@ a:focus { color: #5173bd }
   padding-bottom: 15px;
 }
 
-/*==========9. CUSTOM MEDIA QUERIES==============*/
+/*==========preloader & progress bars==============*/
 
-/*MEDIA QUERIES*/
+.preloader {
+  background-color: $brand-primary;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 2000;
+
+  .preloader-log {
+    width: 100%;
+    height: 100%;
+    font-size: 70px;
+    font-weight: 600;
+    vertical-align: middle;
+    text-align: center;
+
+    p {
+      @include center-vertical;
+    }
+  }
+}
+
+.pace {
+  pointer-events: none;
+  user-select: none;
+  z-index: 3000;
+  position: fixed;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 10px;
+  width: 100%;
+  background: none;
+  border: 0;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity .3s, visibility .3s;
+}
+
+.pace .pace-progress {
+  box-sizing: border-box;
+  transition: width 1s ease-in-out 1s linear;
+  transform: translate3d(0, 0, 0);
+  position: fixed;
+  z-index: 2000;
+  display: block;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 100%;
+  background: #fff;
+}
+
+.pace.pace-inactive {
+  visibility: hidden;
+  opacity: 0;
+}
+
+// background images
+
+.backstretch-carousel, .back-vide {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -3;
+}
+
+.back-vide {
+  z-index: -2;
+}
+
+.bg-pattern {
+  background-image: url(../img/mhp/pattern_no.png);
+  background-repeat: repeat;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+.bg-pattern-vertical {
+  background-image: url(../img/mhp/pattern_vertical.png);
+}
+.bg-pattern-diag {
+  background-image: url(../img/mhp/pattern_diag.png);
+}
+.bg-pattern-denim {
+  background-image: url(../img/mhp/pattern_darkdenim.png);
+}
+
+
+/*==========CUSTOM MEDIA QUERIES==============*/
 
 @media (max-width: 991px) {
   h1 {

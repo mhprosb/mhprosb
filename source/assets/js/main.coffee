@@ -1,9 +1,10 @@
 #= require "jquery"
 #= require "jquery-easing"
 #= require "jquery-waypoints"
-#= require "jquery-backstretch"
+##= require "jquery-backstretch"
 #= require "wow"
 #= require "stellar"
+#= require "vide"
 #= require "_scrollIt.js"
 
 $ ->
@@ -20,7 +21,7 @@ $ ->
     "/assets/img/mhp/screen-bg_mic.jpg"
   ]
 
-  $.scrollIt(easing: "easeInOutQuart")
+  # $.scrollIt(easing: "easeInOutQuart")
 
   new WOW(offset: 100).init()
 
@@ -38,17 +39,17 @@ $ ->
     event.preventDefault()
     return
 
-  $(".backstretch-carousel").backstretch bgImages,
-    duration: 1000
-    fade: 2000
-  $(".backstretch-carousel").backstretch "pause"
+  # $(".backstretch-carousel").backstretch bgImages,
+  #   duration: 1000
+  #   fade: 2000
+  # $(".backstretch-carousel").backstretch "pause"
 
-  $(".screen").waypoint ((direction) ->
-    $(".backstretch-carousel").backstretch "next"  if direction is "down"
-    $(".backstretch-carousel").backstretch "prev"  if direction is "up"
-    return
-  ),
-    offset: "50%"
+  # $(".screen").waypoint ((direction) ->
+  #   $(".backstretch-carousel").backstretch "next"  if direction is "down"
+  #   $(".backstretch-carousel").backstretch "prev"  if direction is "up"
+  #   return
+  # ),
+  #   offset: "50%"
 
   $("#explore").waypoint ((direction) ->
     $(".small-logo").addClass "show"     if direction is "down"
