@@ -2,12 +2,12 @@
   "name": "MH Pro",
   "description": "The official MH Pro website.",
   "version": "0.0.1",
-  "homepage": "http://taufikandtailor.github.io",
+  "homepage": "http://mhprosdnbhd.github.io",
   "license": "MIT",
   "private": true,
   "dependencies": {
     "bootswatch-scss": "~3.2.0",
-    "bootstrap-sass-official": "~3.2.0+2",
+    "bootstrap-sass-official": "~3.2.0",
     "jquery": "~2.1.1",
     "wow": "~1.0.1",
     "jquery-easing": "*",
@@ -19,7 +19,7 @@
     "vide": "~0.1.2"
   },
   "resolutions": {
-    "bootstrap-sass-official": "~3.2.0+2",
+    "bootstrap-sass-official": "~3.2.0",
     "jquery": "~2.1.1"
   }
 }
