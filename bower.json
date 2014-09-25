@@ -16,10 +16,13 @@
     "jquery-backstretch": "~2.0.4",
     "ScrollIt": "*",
     "foundation": "~5.4.4",
-    "vide": "~0.1.2"
+    "vide": "~0.1.2",
+    "shine": "~0.2.7",
+    "fitvids": "~1.1.0",
+    "requestAnimationFrame": "~0.0.22",
+    "flowtype": "~1.1.0"
   },
   "resolutions": {
-    "bootstrap-sass-official": "~3.2.0",
     "jquery": "~2.1.1"
   }
 }

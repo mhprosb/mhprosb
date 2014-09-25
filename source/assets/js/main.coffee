@@ -1,25 +1,16 @@
 #= require "jquery"
 #= require "jquery-easing"
 #= require "jquery-waypoints"
-##= require "jquery-backstretch"
+#= require "jquery-backstretch"
 #= require "wow"
-#= require "stellar"
-#= require "vide"
-#= require "_scrollIt.js"
+# require "fitvids"
+# require "_waitforimages.js"
+# require "_prettyembed.js"
+# require "stellar"
+# require "vide"
+# require "_scrollIt.js"
 
 $ ->
-
-  bgImages = [
-    # "http://interfacelift.com/wallpaper/7yz4ma1/03706_chaterdag_1440x900.jpg"
-    # "http://interfacelift.com/wallpaper/7yz4ma1/03703_pastoralroad_1440x900.jpg"
-    # "http://interfacelift.com/wallpaper/7yz4ma1/03711_icelandicroad_1440x900.jpg"
-    "/assets/img/mhp/screen-bg_mixer.jpg"
-    # "http://interfacelift.com/wallpaper/7yz4ma1/03694_thelakeofdarkness_1440x900.jpg"
-    # "http://interfacelift.com/wallpaper/7yz4ma1/03711_icelandicroad_1440x900.jpg"
-    "/assets/img/mhp/screen-bg_river.jpg"
-    "/assets/img/mhp/screen-bg_river-blur.jpg"
-    "/assets/img/mhp/screen-bg_mic.jpg"
-  ]
 
   # $.scrollIt(easing: "easeInOutQuart")
 
@@ -39,17 +30,27 @@ $ ->
     event.preventDefault()
     return
 
-  # $(".backstretch-carousel").backstretch bgImages,
-  #   duration: 1000
-  #   fade: 2000
-  # $(".backstretch-carousel").backstretch "pause"
+  $.backstretch [
+    # "http://interfacelift.com/wallpaper/7yz4ma1/03706_chaterdag_1440x900.jpg"
+    # "http://interfacelift.com/wallpaper/7yz4ma1/03703_pastoralroad_1440x900.jpg"
+    # "http://interfacelift.com/wallpaper/7yz4ma1/03711_icelandicroad_1440x900.jpg"
+    # "http://interfacelift.com/wallpaper/7yz4ma1/03694_thelakeofdarkness_1440x900.jpg"
+    # "http://interfacelift.com/wallpaper/7yz4ma1/03711_icelandicroad_1440x900.jpg"
+    "/assets/img/mhp/screen-bg_mixer.jpg"
+    "/assets/img/mhp/screen-bg_river.jpg"
+    "/assets/img/mhp/screen-bg_river-blur.jpg"
+    "/assets/img/mhp/screen-bg_mic.jpg"
+  ],
+    duration: 1000
+    fade: 2000
+  $.backstretch "pause"
 
-  # $(".screen").waypoint ((direction) ->
-  #   $(".backstretch-carousel").backstretch "next"  if direction is "down"
-  #   $(".backstretch-carousel").backstretch "prev"  if direction is "up"
-  #   return
-  # ),
-  #   offset: "50%"
+  $(".screen").waypoint ((direction) ->
+    $.backstretch "next"  if direction is "down"
+    $.backstretch "prev"  if direction is "up"
+    return
+  ),
+    offset: "50%"
 
   $("#explore").waypoint ((direction) ->
     $(".small-logo").addClass "show"     if direction is "down"
@@ -57,5 +58,7 @@ $ ->
     return
   ),
     offset: "50%"
+
+  # $(".video-munif").fitVids();
 
   return

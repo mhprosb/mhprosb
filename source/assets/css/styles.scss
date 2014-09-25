@@ -28,7 +28,7 @@ $brand-danger:  #E74C3C;
 }
 
 @mixin no-center-vertical {
-  position: relative;
+  position: static;
   top: 0;
   transform: translateY(0);
 }
@@ -331,13 +331,13 @@ a:focus { color: #5173bd }
 
   .lyrics {
     font-family: "Lato", $font-family-sans-serif;
-    font-size: 35px;
+    font-size: 30px;
     font-weight: 300;
     line-height: .9;
     font-style: italic;
 
     strong {
-      font-size: 40px;
+      font-size: 1.2em;
       font-weight: 700;
       // word-spacing: -10px;
     }
@@ -421,11 +421,11 @@ a:focus { color: #5173bd }
     box-shadow: 0 1px 0 rgba(#000, .1);
   }
 
-  &:hover {
-    img {
-      transform: scale(1.05);
-    }
-  }
+  // &:hover {
+  //   img {
+  //     transform: scale(1.05);
+  //   }
+  // }
 }
 
 /*==========FOOTER==============*/
@@ -516,11 +516,11 @@ a:focus { color: #5173bd }
   left: 0;
   height: 100%;
   width: 100%;
-  z-index: -3;
+  z-index: -4;
 }
 
 .back-vide {
-  z-index: -2;
+  z-index: -3;
 }
 
 .bg-pattern {
@@ -534,7 +534,7 @@ a:focus { color: #5173bd }
   z-index: -1;
 }
 .bg-pattern-vertical {
-  background-image: url(../img/mhp/pattern_vertical.png);
+  background-image: url(../img/mhp/pattern_vertical_dark.png);
 }
 .bg-pattern-diag {
   background-image: url(../img/mhp/pattern_diag.png);
@@ -583,13 +583,19 @@ a:focus { color: #5173bd }
 @media (max-width: 480px) {
   /*Media Queries for smaller devices*/
 
-  .masthead{
+  .masthead {
     background-attachment: scroll;
   }
 
-  .hero, .masterpiece, .team {
+  .masthead, .hero, .masterpiece, .team {
     height: auto;
-    min-height: 500px;
-    @include no-center-vertical;
+    // min-height: 500px;
+    .container {
+      @include no-center-vertical;
+    }
+  }
+
+  .hero .lyrics {
+    font-size: 20px;
   }
 }
