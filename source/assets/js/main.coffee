@@ -11,6 +11,15 @@
 # require "_scrollIt.js"
 
 $ ->
+  Pace.on "done", ->
+    setTimeout (->
+      $(".preloader").addClass("fadeOutUpBig animated").one "webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend", ->
+        $(this).removeClass().addClass(".preloader").hide()
+        return
+
+      return
+    ), 700
+    return
 
   # $.scrollIt(easing: "easeInOutQuart")
 
