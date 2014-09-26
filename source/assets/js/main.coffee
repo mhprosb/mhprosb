@@ -1,13 +1,11 @@
-#= require "wow"
-#= require "jquery-easing"
-#= require "jquery-waypoints"
-#= require "jquery-backstretch"
-# require "stellar"
 # require "vide"
+# require "stellar"
 # require "_scrollIt.js"
 
+$(document).foundation()
+
 $ ->
-  Pace.on "done", ->
+  Pace?.on "done", ->
     setTimeout (->
       $(".preloader").addClass("fadeOutUpBig animated").one "webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend", ->
         $(this).removeClass().addClass(".preloader").hide()

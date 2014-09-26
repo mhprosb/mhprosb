@@ -1,7 +1,7 @@
 # Change Compass configuration
 compass_config do |config|
   # config.output_style = :compact
-  config.add_import_path File.join root, 'bower'
+  config.add_import_path File.join root, 'bower/foundation/scss'
 end
 
 # CSS Autoprefixer

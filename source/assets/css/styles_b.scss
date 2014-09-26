@@ -1,10 +1,27 @@
+// ========================
+// BOOTSTRAP VERSION 3.2.2
+// ========================
+
 @charset "utf-8";
 
 @import "http://fonts.googleapis.com/css?family=Raleway:100,300,500,600,700";
 @import "http://fonts.googleapis.com/css?family=Lato:300,700,300italic,700italic";
 
-@import "settings";
-@import "foundation/scss/foundation";
+$font-family-sans-serif: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+$gray-darker:   lighten(#000, 13.5%);
+$gray-dark:     #7b8a8b;
+$gray:          #95a5a6;
+$gray-light:    #b4bcc2;
+$gray-lighter:  #ecf0f1;
+
+$brand-primary: #2C3E50;
+$brand-success: #18BC9C;
+$brand-info:    #3498DB;
+$brand-warning: #F39C12;
+$brand-danger:  #E74C3C;
+
+@import "bootstrap";
 
 // mixins
 
@@ -40,72 +57,48 @@ strong,
 b { font-weight: 700 }
 
 h1 {
-  font-size: rem-calc(60);
+  font-size: 60px;
   font-weight: 300;
-  line-height: 1;
-  margin: rem-calc(40) 0;
+  line-height: 60px;
+  margin: 40px 0;
 
   strong {
     display: inline;
-    background: rgba($success-color, .5);
-    padding: 0 rem-calc(10);
-    margin-left: rem-calc(-10);
-    margin-right: rem-calc(-10);
-  }
-
-  @media #{$medium-only} {
-    font-size: rem-calc(35);
-    margin: rem-calc(15) 0;
-  }
-
-  @media #{$small-only} {
-    font-size: rem-calc(30);
-    margin: rem-calc(15) 0;
+    background: rgba($brand-success, .5);
+    padding: 0 10px;
+    margin-left: -10px;
+    margin-right: -10px;
   }
 }
 
 h2 {
-  font-size: rem-calc(40);
+  font-size: 40px;
   font-weight: 600;
-  margin: rem-calc(15) 0;
-
-  @media #{$medium-only} {
-    font-size: rem-calc(35)
-  }
-
-  @media #{$small-only} {
-    font-size: rem-calc(30);
-    line-height: rem-calc(40);
-  }
+  margin: 15px 0;
 }
 
 h3 {
-  font-size: rem-calc(20);
-  margin: rem-calc(10) 0;
+  font-size: 20px;
+  margin: 10px 0;
   font-weight: 600;
 }
 
 h4 {
-  font-size: rem-calc(20);
-  margin: rem-calc(10) 0;
-  line-height: rem-calc(24);
-
-  @media #{$small-only} {
-    font-size: rem-calc(18);
-  }
+  font-size: 20px;
+  margin: 10px 0;
 }
 
 h5 {
-  font-size: rem-calc(28);
+  font-size: 28px;
   font-weight: 600;
-  margin: rem-calc(15) 0;
+  margin: 15px 0;
   color: #fff;
 }
 
 h6 {
-  font-size: rem-calc(16);
+  font-size: 16px;
   font-weight: 600;
-  margin: rem-calc(10) 0;
+  margin: 10px 0;
   color: #fff;
 }
 
@@ -114,13 +107,26 @@ a { color: #5173bd }
 a:hover,
 a:focus { color: #5173bd }
 
-.breath {
-  margin: rem-calc(50) auto;
+.btn,
+.btn-lg,
+.input-lg { border-radius: 3px }
 
-  @media #{$large-only} {
-    margin: rem-calc(30) auto;
-  }
+.form-control {
+  border-radius: 3px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border: 0;
 }
+
+.input-lg { height: 55px }
+
+.btn-lg,
+.btn-group-lg>.btn {
+  padding: 10px 28px;
+  height: 52px;
+}
+
+.breath { margin: 50px auto }
 
 .highlight {
   background: #f4f4f4;
@@ -136,11 +142,11 @@ a:focus { color: #5173bd }
 
   a.logo {
     display: inline-block;
-    padding: rem-calc(10);
-    background: $success-color;
+    padding: 10px;
+    background: $brand-success;
 
     img {
-      width: rem-calc(70);
+      width: 70px;
     }
   }
 
@@ -159,20 +165,20 @@ a:focus { color: #5173bd }
     text-align: center;
 
     a {
-      color: shade($success-color, 10%);
+      color: shade($brand-success, 10%);
       display: block;
-      width: rem-calc(100);
-      padding: rem-calc(5) rem-calc(10);
+      width: 100px;
+      padding: 5px 10px;
       text-transform: uppercase;
       font-weight: 500;
-      font-size: rem-calc(11);
+      font-size: 11px;
       // line-height: 1;
       letter-spacing: 1px;
       text-decoration: none;
       transition: background .2s, color .2s;
 
       &:hover {
-        background: $success-color;
+        background: $brand-success;
         color: #fff;
       }
 
@@ -188,18 +194,10 @@ a:focus { color: #5173bd }
 
 .masthead {
   position: relative;
-  padding: rem-calc(80) rem-calc(15);
-  color: #fff;
+  padding: 80px 15px;
+  color: #FFF;
   text-align: center;
   height: 100%;
-
-  @media #{$medium-only} {
-    padding: rem-calc(40) rem-calc(15);
-  }
-
-  @media #{$small-only} {
-    background-attachment: scroll;
-  }
 }
 
 .masthead .container {
@@ -207,23 +205,69 @@ a:focus { color: #5173bd }
 }
 
 .masthead .salam {
-  font-size: rem-calc(30);
+  font-size: 30px;
   font-weight: 300;
 
   img {
-    width: rem-calc(300);
+    width: 300px;
     max-width: 60%;
   }
 }
 
 .masthead-logo {
-  padding: rem-calc(50) 0;
+  padding: 50px 0;
   text-align: center;
 
   img {
-    width: rem-calc(300);
+    width: 300px;
     max-width: 50%;
   }
+}
+
+.btn-large {
+  font-size: 18px;
+  padding: 20px 50px;
+  margin: 5px 10px;
+}
+
+.btn-success {
+  background-color: #2ecc71;
+  background-image: none;
+  border: 0;
+  box-shadow: 0 3px 0 rgba(2, 154, 67, 1);
+  line-height: 1.8;
+  letter-spacing: 5px;
+}
+
+.btn-success:hover,
+.btn-success:focus,
+.btn-success:active {
+  background-color: #29c36a;
+  color: #FFF;
+  border: 0;
+  box-shadow: 0 3px 0 rgba(2, 139, 61, 1);
+}
+
+.btn-primary {
+  background-color: #2db6d8;
+  background-image: none;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  background-color: #209ab8!important;
+  color: #FFF!important;
+}
+
+.subscribe { padding: 45px 0 }
+
+.alertMsg {
+  float: left;
+  font-size: 14px;
+  display: block;
+  padding: 5px 17px;
 }
 
 // Bouncing Arrow Animation
@@ -239,25 +283,23 @@ a:focus { color: #5173bd }
 }
 
 .scrollto {
-  margin: rem-calc(90) auto 0;
+  margin: 90px auto 0;
   display: block;
+  width: 200px;
+  font-size: 16px;
   font-weight: 500;
   letter-spacing: 3px;
   text-transform: uppercase;
-
-  @media #{$medium-only} {
-    margin: rem-calc(70) auto 0;
-  }
 }
 
 .scrollto,
 .scrollto:hover,
 .scrollto:focus {
-  color: #fff;
+  color: #FFF;
   text-decoration: none;
 }
 
-.scrollto--arrow { padding: rem-calc(10) }
+.scrollto--arrow { padding: 10px }
 
 .scrollto--arrow img {
   animation: arrowBounce .5s alternate infinite;
@@ -268,18 +310,20 @@ a:focus { color: #5173bd }
 }
 
 .section-title {
-  margin: rem-calc(60) auto;
+  margin-top: 60px;
+  // margin-bottom: 30px;
+  margin-bottom: 60px;
 
   h2 {
     display: inline-block;
-    background: rgba($primary-color, .8);
-    padding: rem-calc(8) rem-calc(15);
+    background: rgba($brand-primary, .8);
+    padding: 8px 15px;
   }
 
   i.fa {
-    font-size: rem-calc(120);
+    font-size: 120px;
     display: block;
-    margin-bottom: rem-calc(40);
+    margin-bottom: 40px;
     color: rgba(#fff, .9);
   }
 }
@@ -297,7 +341,7 @@ a:focus { color: #5173bd }
 
   .lyrics {
     font-family: "Lato", $font-family-sans-serif;
-    font-size: rem-calc(30);
+    font-size: 30px;
     font-weight: 300;
     line-height: .9;
     font-style: italic;
@@ -305,17 +349,14 @@ a:focus { color: #5173bd }
     strong {
       font-size: 1.2em;
       font-weight: 700;
-    }
-
-    @media #{$small-only} {
-      font-size: rem-calc(20);
+      // word-spacing: -10px;
     }
   }
 
   .cite {
     display: inline-block;
-    padding: rem-calc(5) rem-calc(10);
-    background: rgba($success-color, .5);
+    padding: 5px 10px;
+    background: rgba($brand-success, .5);
   }
 }
 
@@ -332,13 +373,13 @@ a:focus { color: #5173bd }
   h1 {
     font-weight: 100;
     line-height: .9;
-    margin-top: rem-calc(-140);
+    margin-top: -140px;
   }
 
   i.fa.fa-quote-left {
-    font-size: rem-calc(250);
-    color: rgba($success-color, .2);
-    margin-left: rem-calc(-80);
+    font-size: 250px;
+    color: rgba($brand-success, .2);
+    margin-left: -80px;
     text-shadow: none;
   }
 }
@@ -371,12 +412,12 @@ a:focus { color: #5173bd }
 
     h3 {
       display: inline-block;
-      background: rgba($success-color, .9);
-      padding: rem-calc(5) rem-calc(10);
+      background: rgba($brand-success, .9);
+      padding: 5px 10px;
     }
 
     p {
-      font-size: rem-calc(16);
+      font-size: 16px;
       line-height: 1;
       font-weight: 600;
     }
@@ -403,22 +444,23 @@ a:focus { color: #5173bd }
   text-align: center;
   h3 {
     display: inline-block;
-    background: rgba($primary-color, .8);
-    padding: rem-calc(5) rem-calc(10);
+    background: rgba($brand-primary, .8);
+    padding: 5px 10px;
     font-weight: 500;
   }
 }
 
 .footerlinks a {
   text-align: center;
-  padding: 0 rem-calc(13) rem-calc(15);
+  padding: 0 13px;
   display: inline-block;
+  padding-bottom: 15px;
 }
 
 /*==========preloader & progress bars==============*/
 
 .preloader {
-  background-color: $primary-color;
+  background-color: $brand-primary;
   position: fixed;
   width: 100%;
   height: 100%;
@@ -427,7 +469,7 @@ a:focus { color: #5173bd }
   .preloader-log {
     width: 100%;
     height: 100%;
-    font-size: rem-calc(70);
+    font-size: 70px;
     font-weight: 600;
     vertical-align: middle;
     text-align: center;
@@ -512,11 +554,58 @@ a:focus { color: #5173bd }
 }
 
 
-@media #{$small-only} {
+/*==========CUSTOM MEDIA QUERIES==============*/
+
+@media (max-width: 991px) {
+  h1 {
+    font-size: 35px;
+    line-height: 50px;
+    margin: 15px 0;
+  }
+
+  h2 { font-size: 35px }
+
+  .testimonials [class*="col-"]:not(:first-child) { margin-top: 40px }
+
+  .breath { margin: 30px auto }
+}
+
+@media (max-width: 767px) {
+  h1 {
+    font-size: 25px;
+    line-height: 30px;
+  }
+
+  h2 {
+    font-size: 30px;
+    line-height: 40px;
+  }
+
+  .scrollto {
+    margin: 70px auto 0;
+  }
+
+  .subscribe [class*="col-"]:not(:first-child) { margin-top: 30px }
+
+  .masthead { padding: 40px 15px }
+}
+
+@media (max-width: 480px) {
+  /*Media Queries for smaller devices*/
+
+  .masthead {
+    background-attachment: scroll;
+  }
+
   .masthead, .hero, .masterpiece, .team {
     height: auto;
+    // min-height: 500px;
     .container {
       @include no-center-vertical;
     }
+  }
+
+  .hero .lyrics {
+    font-size: 20px;
   }
 }
