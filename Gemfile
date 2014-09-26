@@ -14,14 +14,5 @@ gem "middleman-sprockets"
 
 gem "coffee-script"
 
-gem "compass", "~>1.0.0"
+gem "compass", "~> 1.1.0.alpha.3"
 gem "bootstrap-sass", :require => false
-#
-# gem "scut"
-# gem "color-schemer"
-# gem "ceaser-easing"
-#
-# gem "bourbon"
-# gem "bourbon-compass"
-# gem "neat"
-# gem "neat-compass"
