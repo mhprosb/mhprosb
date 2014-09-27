@@ -1,0 +1,17 @@
+@import "settings";
+
+// vars
+$imgurl: "/assets/img";
+
+// mixins
+@mixin center-vertical {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin no-center-vertical {
+  position: static;
+  top: 0;
+  transform: translateY(0);
+}

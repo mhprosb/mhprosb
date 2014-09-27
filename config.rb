@@ -29,7 +29,7 @@ activate :i18n, :mount_at_root => :ms
 # Paths
 set :css_dir, 'assets/css'
 set :js_dir, 'assets/js'
-set :images_dir, 'assets/images'
+set :images_dir, 'assets/img'
 set :partials_dir, 'partials'
 set :build_dir, '../mhprosb.github.io'
 
@@ -53,4 +53,11 @@ configure :build do
 
   # Or use a different image path
   # set :http_prefix, "/Content/images/"
+end
+
+helpers do
+  def imgurl(url = "")
+    url.gsub!(/^\/|\/$/, '')
+    "/assets/img/#{url}"
+  end
 end
