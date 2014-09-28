@@ -56,7 +56,7 @@ configure :build do
 end
 
 helpers do
-  def imgurl(url = "")
+  def imgurl(url = '')
     url.gsub!(/^\/|\/$/, '')
     "/assets/img/#{url}"
   end

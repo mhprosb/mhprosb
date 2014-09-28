@@ -4,14 +4,15 @@
 $imgurl: "/assets/img";
 
 // mixins
-@mixin center-vertical {
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-@mixin no-center-vertical {
-  position: static;
-  top: 0;
-  transform: translateY(0);
+@mixin center-v($enable: true) {
+  @if $enable {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  @else {
+    position: static;
+    top: 0;
+    transform: translateY(0);
+  }
 }

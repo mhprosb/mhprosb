@@ -121,20 +121,6 @@ a { color: #5173bd }
 a:hover,
 a:focus { color: #5173bd }
 
-.button.alt {
-  background: none;
-  border: 3px solid #fff;
-  font-size: rem-calc(20);
-  letter-spacing: .3em;
-  font-weight: 500;
-  text-transform: uppercase;
-
-  @media #{$small-only} {
-    font-size: rem-calc(20);
-    padding: rem-calc(10) rem-calc(20);
-  }
-}
-
 .tooltip {
   $tt-color: rgba($alert-color, .8);
 
@@ -143,6 +129,10 @@ a:focus { color: #5173bd }
   .nub {
     border-color: transparent transparent $tt-color transparent;
   }
+}
+
+.container {
+  text-align: center;
 }
 
 .breath {
@@ -158,12 +148,23 @@ a:focus { color: #5173bd }
 }
 
 section.breath {
-  margin: rem-calc(50) 0 rem-calc(100);
+  margin: 0;
+  padding: rem-calc(80) 0;
 }
 
 .highlight {
   background: #f4f4f4;
   margin-top: 40px;
+}
+
+// svgicons
+// http://bbriel.me/svgicons
+svg path, svg polygon, svg rect {
+  fill: #fff;
+}
+svg circle {
+  stroke: #fff;
+  stroke-width: 1;
 }
 
 // small logo
@@ -242,7 +243,7 @@ section.breath {
 }
 
 .masthead .container {
-  @include center-vertical;
+  @include center-v;
 }
 
 .masthead .salam {
@@ -251,7 +252,7 @@ section.breath {
 
   img {
     width: rem-calc(300);
-    max-width: 60%;
+    max-width: 50%;
   }
 }
 
@@ -263,6 +264,10 @@ section.breath {
     width: rem-calc(300);
     max-width: 50%;
   }
+
+  @media #{$small-only} {
+    padding: rem-calc(20) 0;
+  }
 }
 
 // Bouncing Arrow Animation
@@ -273,12 +278,12 @@ section.breath {
   }
 
   to {
-    transform: translateY(-10px);
+    transform: translateY(rem-calc(-20));
   }
 }
 
 .scrollto {
-  margin: rem-calc(90) auto 0;
+  margin: rem-calc(50) auto 0;
   display: block;
   font-weight: 500;
   letter-spacing: .3em;
@@ -296,15 +301,34 @@ section.breath {
   text-decoration: none;
 }
 
-.scrollto--arrow { padding: rem-calc(10) }
+.scrollto--arrow {
+  img, svg {
+    animation: arrowBounce .5s alternate infinite;
+  }
 
-.scrollto--arrow img {
-  animation: arrowBounce .5s alternate infinite;
+  svg {
+    width: rem-calc(70);
+
+    @media #{$small-only} {
+      width: rem-calc(40);
+    }
+  }
 }
 
-.container {
-  text-align: center;
+.store .button {
+  background: none;
+  border: 2px solid #fff;
+  font-size: rem-calc(20);
+  letter-spacing: .1em;
+  font-weight: 500;
+  text-transform: uppercase;
+
+  @media #{$small-only} {
+    font-size: 1em;
+    padding: .5em 1em;
+  }
 }
+
 
 /*===SECTION TITLE===*/
 
@@ -314,16 +338,15 @@ section.breath {
   h2 {
     text-transform: uppercase;
     letter-spacing: .15em;
+    margin-right: -.15em;
     font-size: rem-calc(60);
     font-weight: 300;
 
-    #explore & {
-      margin-right: -.15em;
-    }
-
     @media #{$small-only} {
-      font-size: rem-calc(40);
+      font-size: rem-calc(36);
       line-height: .8;
+      letter-spacing: .1em;
+      margin-right: -.1em;
     }
   }
 
@@ -335,14 +358,24 @@ section.breath {
   }
 }
 
+p.lead {
+  @media #{$small-only} {
+    font-size: 1em;
+    line-height: 1;
+    // remove br
+    br { content: ' ' }
+    br:after { content: ' ' }
+  }
+}
+
+
 /*==========HERO==============*/
 
 .hero {
-  position: relative;
   height: 100%;
 
   .container {
-    // @include center-vertical;
+    // @include center-v;
     text-align: right;
   }
 
@@ -356,6 +389,7 @@ section.breath {
     strong {
       font-size: 1.2em;
       font-weight: 700;
+      line-height: .5;
     }
 
     @media #{$small-only} {
@@ -376,7 +410,7 @@ section.breath {
   height: 100%;
 
   .container {
-    // @include center-vertical;
+    // @include center-v;
     text-align: left;
   }
 
@@ -386,9 +420,9 @@ section.breath {
     margin-top: rem-calc(-140);
   }
 
-  i.fa.fa-quote-left {
+  i.fa {
     font-size: rem-calc(200);
-    color: rgba($success-color, .2);
+    color: rgba($success-color, .3);
     margin-left: rem-calc(-60);
     text-shadow: none;
   }
@@ -407,7 +441,7 @@ section.breath {
   // height: 100%;
 
   // .container {
-  //   @include center-vertical;
+  //   @include center-v;
   // }
 }
 
@@ -418,18 +452,32 @@ section.breath {
   color: #fff;
 
   .caption {
+    font-size: rem-calc(16);
     color: #fff;
 
     h3 {
       display: inline-block;
       background: rgba($success-color, .9);
-      padding: rem-calc(5) rem-calc(10);
+      padding: .2em .5em;
+      font-size: 1.2em;
+
+      @media #{$small-only} {
+        font-weight: 300;
+      }
     }
 
     p {
-      font-size: rem-calc(16);
+      font-size: 1em;
       line-height: 1;
       font-weight: 600;
+
+      @media #{$small-only} {
+        font-weight: 300;
+      }
+    }
+
+    @media #{$small-only} {
+      font-size: rem-calc(14);
     }
   }
 
@@ -439,6 +487,9 @@ section.breath {
     border: 3px solid #fff;
     padding: 2px;
     box-shadow: 0 1px 0 rgba(#000, .1);
+
+    @media #{$small-only} {
+    }
   }
 
   // &:hover {
@@ -497,34 +548,39 @@ footer {
   border-top: 5px solid tint($alert-color, 20);
 }
 
-.footerlinks {
-  text-align: center;
+.footer-address p {
+  margin: 0;
+  font-size: 1em;
+  line-height: 1.2;
+  font-weight: 300;
+  text-align: left;
 
-  h3 {
-    display: inline-block;
-    font-size: rem-calc(20);
+  @media #{$small-only} {
+    text-align: center;
+    margin-bottom: 2em;
+  }
+}
+
+.footer-links {
+  text-align: right;
+
+  h3, h4 {
+    font-size: 1em;
+    line-height: 1.2;
     font-weight: 300;
     margin: 0;
-
-    @media #{$small-only} {
-      font-size: rem-calc(18);
-    }
   }
 
   h4 {
-    font-size: rem-calc(18);
-    font-weight: 300;
     color: tint($alert-color, 20);
-    margin: 0;
+  }
 
-    @media #{$small-only} {
-      font-size: rem-calc(16);
-    }
+  @media #{$small-only} {
+    text-align: center;
   }
 }
 
 .footerlinks a {
-  text-align: center;
   padding: 0 rem-calc(13) rem-calc(15);
   display: inline-block;
 }
@@ -558,7 +614,7 @@ footer {
   background-image: url(#{$imgurl}/pattern_vertical_dark.png);
 }
 .bg-pattern-diag {
-  background-image: url(#{$imgurl}/pattern_diag.png);
+  background-image: url(#{$imgurl}/pattern_diag_dark.png);
 }
 .bg-pattern-denim {
   background-image: url(#{$imgurl}/pattern_darkdenim.png);
@@ -571,7 +627,7 @@ footer {
   }
 
   .masthead .container {
-    @include no-center-vertical;
+    @include center-v(false);
   }
 
 }
