@@ -1,4 +1,22 @@
-@import "settings";
+@import "foundation/settings";
+
+// Foundation settings override
+$row-width: rem-calc(1170);
+$total-columns: 12;
+$column-gutter: rem-calc(30);
+
+$font-family-sans-serif: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+$primary-color   : #2C3E50;
+$secondary-color : #e7e7e7;
+$alert-color     : #E74C3C;
+$success-color   : #18BC9C;
+$warning-color   : #F39C12;
+$info-color      : #3498DB;
+
+$grey-color: tint(shade($success-color, 90), 30);
+
+$header-font-color: #fff;
 
 // vars
 $imgurl: "/assets/img";

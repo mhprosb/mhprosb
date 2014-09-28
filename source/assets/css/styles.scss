@@ -47,9 +47,10 @@ h1 {
   strong {
     display: inline;
     background: rgba($success-color, .5);
-    padding: 0 rem-calc(10);
-    margin-left: rem-calc(-10);
-    margin-right: rem-calc(-10);
+    line-height: .5;
+    padding: 0 .2em;
+    margin-left: -.2em;
+    margin-right: -.2em;
   }
 
   @media #{$medium-only} {
@@ -100,14 +101,12 @@ h5 {
   font-size: rem-calc(28);
   font-weight: 600;
   margin: rem-calc(15) 0;
-  color: #fff;
 }
 
 h6 {
   font-size: rem-calc(16);
   font-weight: 600;
   margin: rem-calc(10) 0;
-  color: #fff;
 }
 
 p.lead {
@@ -129,10 +128,6 @@ a:focus { color: #5173bd }
   .nub {
     border-color: transparent transparent $tt-color transparent;
   }
-}
-
-.container {
-  text-align: center;
 }
 
 .breath {
@@ -229,7 +224,6 @@ svg circle {
 .masthead {
   position: relative;
   padding: rem-calc(80) rem-calc(15);
-  color: #fff;
   text-align: center;
   height: 100%;
 
@@ -373,10 +367,10 @@ p.lead {
 
 .hero {
   height: 100%;
+  text-align: right;
 
   .container {
     // @include center-v;
-    text-align: right;
   }
 
   .lyrics {
@@ -408,10 +402,10 @@ p.lead {
 
 .masterpiece {
   height: 100%;
+  text-align: left;
 
   .container {
     // @include center-v;
-    text-align: left;
   }
 
   h1 {
@@ -439,6 +433,7 @@ p.lead {
 
 .team {
   // height: 100%;
+  text-align: center;
 
   // .container {
   //   @include center-v;
@@ -446,34 +441,21 @@ p.lead {
 }
 
 .teamblock {
-  border: 0;
-  text-align: center;
-  background: transparent;
-  color: #fff;
-
   .caption {
     font-size: rem-calc(16);
-    color: #fff;
 
     h3 {
       display: inline-block;
       background: rgba($success-color, .9);
-      padding: .2em .5em;
+      padding: .1em .5em .15em;
       font-size: 1.2em;
-
-      @media #{$small-only} {
-        font-weight: 300;
-      }
+      font-weight: 300;
     }
 
     p {
       font-size: 1em;
       line-height: 1;
-      font-weight: 600;
-
-      @media #{$small-only} {
-        font-weight: 300;
-      }
+      font-weight: 300;
     }
 
     @media #{$small-only} {
@@ -502,7 +484,7 @@ p.lead {
 /*==========GMAP==============*/
 .gmaps {
   margin-top: rem-calc(30);
-  border-top: 5px solid #fff;
+  // border-top: 5px solid $primary-color;
 }
 
 #gmap {
@@ -544,8 +526,23 @@ p.lead {
 
 footer {
   background: rgba($primary-color, .9);
+  background: #fff;
+  color: $grey-color;
   padding: rem-calc(40px) 0;
   border-top: 5px solid tint($alert-color, 20);
+  text-shadow: none;
+
+  h1, h1.subheader {
+    margin: 2em 0 0;
+    color: $grey-color;
+    line-height: .9;
+    letter-spacing: 0;
+  }
+  h1.subheader {
+    margin: 0 0 2em;
+    font-weight: 100;
+    color: tint($grey-color, 50);
+  }
 }
 
 .footer-address p {
@@ -553,18 +550,15 @@ footer {
   font-size: 1em;
   line-height: 1.2;
   font-weight: 300;
-  text-align: left;
 
   @media #{$small-only} {
-    text-align: center;
     margin-bottom: 2em;
   }
 }
 
 .footer-links {
-  text-align: right;
-
   h3, h4 {
+    color: #666;
     font-size: 1em;
     line-height: 1.2;
     font-weight: 300;
@@ -573,10 +567,6 @@ footer {
 
   h4 {
     color: tint($alert-color, 20);
-  }
-
-  @media #{$small-only} {
-    text-align: center;
   }
 }
 
@@ -601,8 +591,7 @@ footer {
 }
 
 .bg-pattern {
-  background-image: url(#{$imgurl}/pattern_no.png);
-  background-repeat: repeat;
+  background: url(#{$imgurl}/pattern_no.png) repeat;
   position: fixed;
   top: 0;
   left: 0;
@@ -614,7 +603,7 @@ footer {
   background-image: url(#{$imgurl}/pattern_vertical_dark.png);
 }
 .bg-pattern-diag {
-  background-image: url(#{$imgurl}/pattern_diag_dark.png);
+  background-image: url(#{$imgurl}/pattern_diag.png);
 }
 .bg-pattern-denim {
   background-image: url(#{$imgurl}/pattern_darkdenim.png);

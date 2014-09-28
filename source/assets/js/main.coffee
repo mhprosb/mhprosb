@@ -40,17 +40,16 @@ $ ->
     offset: "50%"
 
   # Parallax
-  # scrollZoom = ->
-  #   st = $(window).scrollTop()
-  #   wh = $(window).height()
-  #   sf = 1 + st/(20*wh)
+  scrollZoom = ->
+    st = $(window).scrollTop()
+    wh = $(window).height()
+    sf = 1 + st/(20*wh)
 
-  #   $('.backstretch img').css
-  #     'transform': 'scale('+sf+')'
-  #     '-webkit-transform': 'scale('+sf+')'
+    $('.backstretch img').css
+      'transform': 'scale('+sf+')'
 
-  # scrollZoom()
-  # $(window).scroll -> scrollZoom()
+  scrollZoom()
+  $(window).scroll -> scrollZoom()
 
   # $.stellar({
   #   horizontalScrolling: false,
@@ -109,11 +108,12 @@ $ ->
       $(window).bind "resize", ->
         map.setCenter pointLatLng
 
+  loadGmap()
+
   # Pace preloader
   Pace?.on "done", ->
     setTimeout (->
       $(".preloader").fadeOut(250)
-      loadGmap()
       ), 700
 
   return
