@@ -113,7 +113,7 @@ $ ->
   # Pace preloader
   Pace?.on "done", ->
     setTimeout (->
-      $(".preloader").fadeOut(250)
-      ), 700
+      $("html").addClass("loaded")
+      ), 300
 
   return
