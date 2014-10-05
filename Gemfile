@@ -14,5 +14,4 @@ gem "middleman-sprockets"
 
 gem "coffee-script"
 
-gem "compass", "~> 1.1.0.alpha.3"
-gem "bootstrap-sass", :require => false
+gem "compass", "~>1.1.0.alpha.3"
