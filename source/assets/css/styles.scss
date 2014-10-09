@@ -4,21 +4,20 @@
 
 @charset "utf-8";
 
-@import "http://fonts.googleapis.com/css?family=Raleway:100,300,500,600,700";
-@import "http://fonts.googleapis.com/css?family=Lato:300,700,300italic,700italic";
-
-@import "//cdn.jsdelivr.net/animatecss/3.2.0/animate.min.css";
+@import "//fonts.googleapis.com/css?family=Raleway:100,300,500,600,700";
+@import "//fonts.googleapis.com/css?family=Lato:300,700,300italic,700italic";
 @import "//cdn.jsdelivr.net/fontawesome/4.2.0/css/font-awesome.min.css";
 
-@import "site";
+@import "//cdn.jsdelivr.net/animatecss/3.2.0/animate.min.css";
 
+@import "site";
 @import "normalize";
 @import "foundation/components/grid";
 @import "foundation/components/buttons";
-@import "foundation/components/flex-video";
 @import "foundation/components/tooltips";
 @import "foundation/components/type";
 @import "foundation/components/visibility";
+// @import "foundation/components/flex-video";
 
 // base styles
 html {
@@ -232,10 +231,10 @@ svg circle {
         color: #fff;
       }
 
-      body.lang_ms &.lang_ms {
+      html:lang(ms) &.lang_ms {
         display: none;
       }
-      body.lang_en &.lang_en {
+      html:lang(en) &.lang_en {
         display: none;
       }
     }

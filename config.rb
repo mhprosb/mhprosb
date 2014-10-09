@@ -1,30 +1,29 @@
-# Change Compass configuration
-compass_config do |config|
-  # config.output_style = :compact
-  config.add_import_path File.join root, 'bower/foundation/scss'
-end
-
 # CSS Autoprefixer
+# ----------------------------------------------
 activate :autoprefixer do |config|
   config.browsers = ['last 2 versions', 'Explorer >= 9']
   config.inline   = true
 end
 
-# asset pipeline
-activate :sprockets
-sprockets.append_path File.join root, 'bower'
+# Bower Config
+# ----------------------------------------------
+after_configuration do
+  @bower_config = JSON.parse(IO.read("#{root}/.bowerrc"))
+  @bower_assets_path = File.join root, @bower_config['directory']
+  sprockets.append_path @bower_assets_path
+  sprockets.append_path File.join @bower_assets_path, 'foundation/scss'
+end
 
+# Livereload
 # Reload the browser automatically whenever files change
-activate :livereload
+# ----------------------------------------------
+configure :development do
+  activate :livereload, :no_swf => true
+end
 
 # Localization
+# ----------------------------------------------
 activate :i18n, :mount_at_root => :ms
-
-# Enable cache buster
-# activate :asset_hash
-
-# not using layout at all
-# set :layout, false
 
 # Paths
 set :css_dir, 'assets/css'
@@ -33,28 +32,62 @@ set :images_dir, 'assets/img'
 set :partials_dir, 'partials'
 set :build_dir, '../mhprosb.github.io'
 
-# Proxies
-# 1. readme
-proxy '/README.md', '/README.txt', :layout => false
+set :trailing_slash, false
 
+# Page options, layouts, aliases and proxies
+# ----------------------------------------------
+# Proxies
+proxy '/README.md', '/README.txt', :layout => false
 # Ignores
 ignore '/README.txt'
 ignore /^.*\.psd/
 
-# Build-specific configuration
-configure :build do
+# not using layout at all
+# set :layout, false
 
+# Development-specific configuration
+# ----------------------------------------------
+configure :development do
+  activate :directory_indexes
+  activate :asset_hash
+  activate :cache_buster
+  set :debug_assets, true
+end
+
+# Build-specific configuration
+# ----------------------------------------------
+configure :build do
+  # Use relative URLs
+  activate :directory_indexes
+
+  # Optimize images
   activate :imageoptim
+
+  # Activate gzip
+  activate :gzip
+
+  # Minify CSS on build
   activate :minify_css
+
+  # Minify Javascript on build
   activate :minify_javascript
 
-  # Use relative URLs
-  # activate :relative_assets
+  # Add asset fingerprinting to avoid cache issues
+  # activate :asset_hash
+
+  # Enable cache buster
+  activate :cache_buster
 
   # Or use a different image path
   # set :http_prefix, "/Content/images/"
+
+  # Compress PNGs after build (First: gem install middleman-smusher)
+  require "middleman-smusher"
+  activate :smusher
 end
 
+# Helpers
+# ----------------------------------------------
 helpers do
   def imgurl(url = '')
     url.gsub!(/^\/|\/$/, '')

@@ -7,7 +7,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
-    autoprefixer-rails (3.1.0.20140911)
+    autoprefixer-rails (3.1.1.20141001)
       execjs
     celluloid (0.16.0)
       timers (~> 4.0.0)
@@ -16,14 +16,14 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.8.0)
-    compass (1.1.0.alpha.3)
+    compass (1.0.1)
       chunky_png (~> 1.2)
-      compass-core (~> 1.1.0.alpha.3)
+      compass-core (~> 1.0.1)
       compass-import-once (~> 1.0.5)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
       sass (>= 3.3.13, < 3.5)
-    compass-core (1.1.0.alpha.3)
+    compass-core (1.0.1)
       multi_json (~> 1.0)
       sass (>= 3.3.0, < 3.5)
     compass-import-once (1.0.5)
@@ -44,6 +44,7 @@ GEM
     hooks (0.4.0)
       uber (~> 0.0.4)
     http_parser.rb (0.6.0)
+    httpclient (2.4.0)
     i18n (0.6.11)
     image_optim (0.9.1)
       exifr (~> 1.1.3)
@@ -54,6 +55,7 @@ GEM
     image_size (1.1.5)
     in_threads (1.2.2)
     json (1.8.1)
+    kgio (2.9.2)
     kramdown (1.4.2)
     listen (2.7.11)
       celluloid (>= 0.15.2)
@@ -92,6 +94,9 @@ GEM
       em-websocket (~> 0.5.1)
       middleman-core (~> 3.2)
       rack-livereload (~> 0.3.15)
+    middleman-smusher (3.0.0)
+      middleman (>= 3.0.0)
+      smusher (~> 0.4.9)
     middleman-sprockets (3.3.10)
       middleman-core (~> 3.3)
       sprockets (~> 2.12.1)
@@ -111,10 +116,16 @@ GEM
       rack
     rack-test (0.6.2)
       rack (>= 1.0)
+    raindrops (0.13.0)
+    rake (10.3.2)
     rb-fsevent (0.9.4)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
     sass (3.4.5)
+    smusher (0.4.9)
+      httpclient (>= 2.2)
+      json
+      rake
     sprockets (2.12.2)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -132,19 +143,26 @@ GEM
       hitimes
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
-    uber (0.0.8)
+    uber (0.0.9)
     uglifier (2.5.3)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    unicorn (4.8.3)
+      kgio (~> 2.6)
+      rack
+      raindrops (~> 0.7)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  coffee-script
-  compass (~> 1.1.0.alpha.3)
-  middleman
-  middleman-autoprefixer
-  middleman-imageoptim
-  middleman-livereload
-  middleman-sprockets
+  coffee-script (~> 2.3.0)
+  compass (~> 1.0.1)
+  middleman (~> 3.3.6)
+  middleman-autoprefixer (~> 2.2.1)
+  middleman-imageoptim (~> 0.1.4)
+  middleman-livereload (~> 3.3.4)
+  middleman-smusher (~> 3.0.0)
+  middleman-sprockets (~> 3.3.10)
+  sass (~> 3.4.5)
+  unicorn (~> 4.8.3)

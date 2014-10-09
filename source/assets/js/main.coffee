@@ -1,7 +1,6 @@
 #= require "_mapstyles.js"
-# require "vide"
 # require "stellar"
-# require "_scrollIt.js"
+#= require "_scrollIt.js"
 
 $ ->
 
@@ -9,7 +8,7 @@ $ ->
   $(document).foundation()
 
   # Scroller
-  # $.scrollIt(easing: "easeInOutQuart")
+  $.scrollIt easing: "easeInOutQuart"
 
   $(".scrollto, .gototop").bind "click", (event) ->
     $anchor = $(this)

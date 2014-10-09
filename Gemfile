@@ -1,17 +1,20 @@
 #ruby=ruby-2.1.3
 #ruby-gemset=middleman
 
-# If you have OpenSSL installed, we recommend updating
-# the following line to use "https"
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
-# the core: middleman
-gem "middleman"
-gem "middleman-autoprefixer"
-gem "middleman-livereload"
-gem "middleman-imageoptim"
-gem "middleman-sprockets"
+# Server
+gem 'unicorn', '~> 4.8.3'
 
-gem "coffee-script"
+# Middleman Gems
+gem 'middleman', '~> 3.3.6'
+gem 'middleman-smusher', '~> 3.0.0'
+gem 'middleman-livereload', '~> 3.3.4'
+gem 'middleman-imageoptim', '~> 0.1.4'
+gem 'middleman-sprockets', '~> 3.3.10'
+gem 'middleman-autoprefixer', '~> 2.2.1'
 
-gem "compass", "~>1.1.0.alpha.3"
+# Precompilers
+gem 'coffee-script', '~> 2.3.0'
+gem 'compass', '~> 1.0.1'
+gem 'sass', '~> 3.4.5'
