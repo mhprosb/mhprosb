@@ -1,5 +1,16 @@
 @import "foundation/settings";
 
+$enable-fade-in           : true;
+$enable-fade-in-up        : true;
+$enable-fade-in-up-big    : true;
+$enable-fade-in-down      : true;
+$enable-fade-in-down-big  : true;
+$enable-fade-in-left      : true;
+$enable-fade-in-left-big  : true;
+$enable-fade-in-right     : true;
+$enable-fade-in-right-big : true;
+@import "animate-scss/src/animate";
+
 // Foundation settings override
 $row-width: rem-calc(1170);
 $total-columns: 12;

@@ -7,7 +7,7 @@
   "private": true,
   "dependencies": {
     "jquery": "~2.1.1",
-    "wow": "~1.0.1",
+    "wow": "~1.0.2",
     "jquery-easing": "*",
     "stellar": "~0.6.2",
     "jquery-waypoints": "~2.0.5",
@@ -18,7 +18,9 @@
     "modernizr": "~2.8.3",
     "normalize.scss": "~3.0.1+normalize.3.0.1",
     "animate-scss": "~1.1.0",
-    "normalize.css": "~3.0.2"
+    "normalize.css": "~3.0.2",
+    "pace": "0.5.6",
+    "animate.css": "~3.2.0"
   },
   "resolutions": {
     "jquery": "~2.1.1"
