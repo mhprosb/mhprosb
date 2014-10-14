@@ -48,9 +48,9 @@ ignore /^.*\.psd/
 # Development-specific configuration
 # ----------------------------------------------
 configure :development do
-  activate :directory_indexes
-  activate :asset_hash
-  activate :cache_buster
+  # activate :directory_indexes
+  # activate :asset_hash
+  # activate :cache_buster
   set :debug_assets, true
 end
 
@@ -59,6 +59,9 @@ end
 configure :build do
   # Use relative URLs
   activate :directory_indexes
+
+  # Minify HTML
+  # activate :minify_html
 
   # Optimize images
   activate :imageoptim

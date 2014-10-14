@@ -3,5 +3,5 @@
 //= require "jquery-waypoints"
 //= require "jquery-backstretch"
 //= require "wow"
-//= require "foundation/js/foundation/foundation.js"
-//= require "foundation/js/foundation/foundation.tooltip.js"
+// require "foundation/js/foundation/foundation.js"
+// require "foundation/js/foundation/foundation.tooltip.js"

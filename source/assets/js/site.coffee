@@ -5,7 +5,7 @@
 $ ->
 
   # Foundation JS
-  $(document).foundation()
+  # $(document).foundation()
 
   # Scroller
   $.scrollIt easing: "easeInOutQuart"

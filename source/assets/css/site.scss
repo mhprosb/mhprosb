@@ -1,22 +1,32 @@
-// ========================
-// FOUNDATION VERSION 5.4.5
-// ========================
-
 @charset "utf-8";
 
 @import "//fonts.googleapis.com/css?family=Raleway:100,300,500,600,700";
 @import "//fonts.googleapis.com/css?family=Lato:300,700,300italic,700italic";
 @import "//cdn.jsdelivr.net/fontawesome/4.2.0/css/font-awesome.min.css";
 
-@import "base";
-@import "pace";
+// Normalize
 @import "normalize";
+
+// Color names
+@import "colors";
+
+// Foundation imports
+@import "settings";
 @import "foundation/components/grid";
 @import "foundation/components/buttons";
-@import "foundation/components/tooltips";
+// @import "foundation/components/tooltips";
 @import "foundation/components/type";
 @import "foundation/components/visibility";
 // @import "foundation/components/flex-video";
+
+// Pace
+@import "pace";
+
+// Animation.scss
+@import "animate-scss/src/animate";
+
+// ==================================================
+// Main stylesheet
 
 // base styles
 html {
@@ -34,7 +44,7 @@ body {
 }
 
 .preloader {
-  background-color: #fff;
+  background-color: $flat-red-1;
   position: fixed;
   width: 100%;
   height: 100%;
@@ -44,8 +54,8 @@ body {
 
   img {
     @include center-v;
-    // width: 50%;
-    // height: 50px;
+    width: 50%;
+    height: 50px;
   }
 
   .loaded & {
@@ -246,6 +256,10 @@ svg circle {
   text-align: center;
   height: 100%;
 
+  .container {
+    @include center-v;
+  }
+
   @media #{$medium-only} {
     padding: rem-calc(40) rem-calc(15);
   }
@@ -253,38 +267,80 @@ svg circle {
   @media #{$small-only} {
     background-attachment: scroll;
   }
-}
 
-.masthead .container {
-  @include center-v;
-}
+  .salam {
+    font-size: rem-calc(30);
+    font-weight: 300;
 
-.masthead .salam {
-  font-size: rem-calc(30);
-  font-weight: 300;
-
-  img {
-    width: rem-calc(300);
-    max-width: 50%;
-  }
-}
-
-.masthead-logo {
-  padding: rem-calc(50) 0;
-  text-align: center;
-
-  img {
-    width: rem-calc(300);
-    max-width: 50%;
+    img {
+      width: rem-calc(500);
+      max-width: 50%;
+    }
   }
 
-  @media #{$small-only} {
-    padding: rem-calc(20) 0;
+  .masthead-logo {
+    padding: rem-calc(50) 0;
+    text-align: center;
+
+    img {
+      width: rem-calc(300);
+      max-width: 50%;
+    }
+
+    @media #{$small-only} {
+      padding: rem-calc(20) 0;
+    }
+  }
+
+  .store .button {
+    // background: $flat-blue-3;
+    // border: 2px solid #fff;
+    font-size: rem-calc(25);
+    letter-spacing: .2em;
+    font-weight: 600;
+    text-transform: uppercase;
+
+    @media #{$small-only} {
+      font-size: 1em;
+      padding: .5em 1em;
+    }
+  }
+
+  .scrollto {
+    margin: rem-calc(50) auto 0;
+    display: block;
+    font-weight: 500;
+    letter-spacing: .3em;
+    text-transform: uppercase;
+
+    @media #{$medium-only} {
+      margin: rem-calc(70) auto 0;
+    }
+  }
+
+  .scrollto,
+  .scrollto:hover,
+  .scrollto:focus {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .scrollto-arrow {
+    img, svg {
+      animation: arrowBounce .5s alternate infinite;
+    }
+
+    svg {
+      width: rem-calc(70);
+
+      @media #{$small-only} {
+        width: rem-calc(40);
+      }
+    }
   }
 }
 
 // Bouncing Arrow Animation
-
 @keyframes arrowBounce {
   from {
     transform: translateY();
@@ -295,53 +351,37 @@ svg circle {
   }
 }
 
-.scrollto {
-  margin: rem-calc(50) auto 0;
-  display: block;
-  font-weight: 500;
-  letter-spacing: .3em;
-  text-transform: uppercase;
+.social {
+  a {
+    display: inline-block;
+    margin: 0 8px;
+    border-radius: 100%;
+    border: 2px solid #fff;
+    padding: 15px;
+    transition: background .5s, border .5s;
 
-  @media #{$medium-only} {
-    margin: rem-calc(70) auto 0;
-  }
-}
+    img {
+      display: block;
+      width: 30px;
+      height: 30px;
+    }
 
-.scrollto,
-.scrollto:hover,
-.scrollto:focus {
-  color: #fff;
-  text-decoration: none;
-}
-
-.scrollto--arrow {
-  img, svg {
-    animation: arrowBounce .5s alternate infinite;
+    &:hover {
+      background: rgba(#fff, .2)
+    }
   }
 
-  svg {
-    width: rem-calc(70);
+  @media #{$small-only} {
+    a {
+      padding: 10px;
 
-    @media #{$small-only} {
-      width: rem-calc(40);
+      img {
+        width: 20px;
+        height: 20px;
+      }
     }
   }
 }
-
-.store .button {
-  background: none;
-  border: 2px solid #fff;
-  font-size: rem-calc(20);
-  letter-spacing: .1em;
-  font-weight: 500;
-  text-transform: uppercase;
-
-  @media #{$small-only} {
-    font-size: 1em;
-    padding: .5em 1em;
-  }
-}
-
 
 /*===SECTION TITLE===*/
 
@@ -544,23 +584,36 @@ p.lead {
 /*==========FOOTER==============*/
 
 footer {
-  background: rgba($primary-color, .9);
-  background: #fff;
-  color: $grey-color;
-  padding: rem-calc(40px) 0;
-  border-top: 5px solid tint($alert-color, 20);
+  background: $flat-red-1;
+  // color: $grey-color;
+  padding: rem-calc(150) 0 rem-calc(100);
   text-shadow: none;
 
-  h1, h1.subheader {
-    margin: 2em 0 0;
-    color: $grey-color;
+  @media #{$medium-only} {
+    padding: rem-calc(100) 0 rem-calc(50);
+  }
+
+  @media #{$small-only} {
+    padding: rem-calc(100) 0 rem-calc(50);
+  }
+
+  h1, h2.subheader {
+    margin: 0;
+    // color: $grey-color;
     line-height: .9;
     letter-spacing: 0;
   }
-  h1.subheader {
-    margin: 0 0 2em;
+  h2.subheader {
+    margin: 0;
     font-weight: 100;
-    color: tint($grey-color, 50);
+    // color: tint($grey-color, 50);
+  }
+
+  .social {
+    margin: rem-calc(50) 0 rem-calc(100);
+    @media #{$small-only} {
+      margin: rem-calc(30) 0 rem-calc(50);
+    }
   }
 }
 
@@ -577,7 +630,7 @@ footer {
 
 .footer-links {
   h3, h4 {
-    color: #666;
+    // color: #666;
     font-size: 1em;
     line-height: 1.2;
     font-weight: 300;
@@ -585,7 +638,7 @@ footer {
   }
 
   h4 {
-    color: tint($alert-color, 20);
+    // color: tint($alert-color, 20);
   }
 }
 
@@ -637,5 +690,4 @@ footer {
   .masthead .container {
     @include center-v(false);
   }
-
 }
