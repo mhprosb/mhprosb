@@ -95,7 +95,7 @@ h1 {
 
 h2 {
   font-size: rem-calc(40);
-  font-weight: 600;
+  font-weight: 300;
   line-height: 1;
   margin: rem-calc(15) 0;
 
@@ -260,12 +260,11 @@ svg circle {
     @include center-v;
   }
 
-  @media #{$medium-only} {
-    padding: rem-calc(40) rem-calc(15);
+  h1 {
+    margin-bottom: 0;
   }
+  h2 {
 
-  @media #{$small-only} {
-    background-attachment: scroll;
   }
 
   .salam {
@@ -293,8 +292,6 @@ svg circle {
   }
 
   .store .button {
-    // background: $flat-blue-3;
-    // border: 2px solid #fff;
     font-size: rem-calc(25);
     letter-spacing: .2em;
     font-weight: 600;
@@ -337,6 +334,14 @@ svg circle {
         width: rem-calc(40);
       }
     }
+  }
+
+  @media #{$medium-only} {
+    padding: rem-calc(40) rem-calc(15);
+  }
+
+  @media #{$small-only} {
+    background-attachment: scroll;
   }
 }
 
@@ -393,7 +398,6 @@ svg circle {
     letter-spacing: .15em;
     margin-right: -.15em;
     font-size: rem-calc(60);
-    font-weight: 300;
 
     @media #{$small-only} {
       font-size: rem-calc(36);
@@ -675,7 +679,7 @@ footer {
   background-image: url(#{$imgurl}/pattern_vertical_dark.png);
 }
 .bg-pattern-diag {
-  background-image: url(#{$imgurl}/pattern_diag.png);
+  background-image: url(#{$imgurl}/pattern_diag_dark.png);
 }
 .bg-pattern-denim {
   background-image: url(#{$imgurl}/pattern_darkdenim.png);
