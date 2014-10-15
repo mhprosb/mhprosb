@@ -85,8 +85,8 @@ configure :build do
   # set :http_prefix, "/Content/images/"
 
   # Compress PNGs after build (First: gem install middleman-smusher)
-  require "middleman-smusher"
-  activate :smusher
+  # require "middleman-smusher"
+  # activate :smusher
 end
 
 # Helpers

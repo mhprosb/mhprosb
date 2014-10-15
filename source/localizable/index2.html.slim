@@ -1,0 +1,145 @@
+- content_for :arrowup do
+  svg.arrow enable-background=("new 0 0 94.67 94.67") viewBox=("0 0 94.67 94.67")
+    path d="M94.671,67.894l-1.338,1.486L47.335,27.982L1.337,69.38L0,67.894L47.335,25.29L94.671,67.894z"
+- content_for :arrowdown do
+  svg.arrow enable-background=("new 0 0 94.67 94.67") viewBox=("0 0 94.67 94.67")
+    path d="M94.67,26.776L47.335,69.38L0,26.776l1.338-1.486l45.997,41.396l45.997-41.396L94.67,26.776z"
+
+/! ******************** SMALL TOPNAV ********************
+header.small-logo role="header"
+  a.logo.gototop href="#top"
+    img alt="logo" src=imgurl("logo_white_small.png") /
+  nav
+    a.lang_ms href="/"
+      i.fa.fa-flag
+      | Malay
+    a.lang_en href="/en"
+      i.fa.fa-flag
+      | English
+
+/! ******************** MASTHEAD SECTION ********************
+main#top.masthead.screen data-scroll-index="0" role="main"
+  .container
+    .row
+      .large-12.columns
+        .salam
+          img alt="" src=imgurl("salam.svg")
+        .masthead-logo
+          a href="#"
+            img alt="logo" src=imgurl("logo_white.png") /
+        h1= t(:allah)
+        .store.breath
+          a.button href="//www.mhpro.com.my/" target="_blank"
+            i.fa.fa-shopping-cart
+            | \&nbsp;&nbsp;#{t(:store)}
+        .social.breath
+          a href="http://facebook.com/munifhijjazproduction"
+            img alt="" src=imgurl("social/facebook-a.svg") /
+          a href="http://twitter.com/MunifHijjazPro"
+            img alt="" src=imgurl("social/twitter1-a.svg") /
+          a href="https://www.youtube.com/user/mhprochannel"
+            img alt="" src=imgurl("social/youtube-a.svg") /
+          a href="http://instagram.com/munifhijjazpro"
+            img alt="" src=imgurl("social/instagram-a.svg") /
+        a.scrollto href="#explore"
+          p.scrollto-arrow= yield_content :arrowdown
+
+/! ******************** HERO SECTION ********************
+section#explore.hero.screen.breath data-scroll-index="1"
+  .container
+    .row
+      .small-12.columns
+        .section-title
+          /! <i class="fa fa-send wow fade-in-down" data-wow-delay="0.2s"></i
+          h2.wow.fade-in-right data-wow-delay="0.3s" = t(:passion)
+          p.lead.wow.fade-in-right data-wow-delay="0.4s" = t(:passion_sub)
+        p.lyrics.wow.fade-in-right data-wow-delay="0.5s"
+          | Dalam diri selembut sutera
+          br
+            | Kau miliki
+            strong iman yang teguh
+            br
+              | Kau nyalakan obor agama dirimu bak lentera
+              br
+                | dibelengu jahiliah kau tempuh dengan berani
+                br
+                  | Walau pun jasadmu milik tuan
+                  br
+                    | Tetapi
+                    strong hatimu milik Tuhan
+        p.cite.wow.fade-in-right data-wow-delay="0.8s"
+          | Munif Ahmad &amp; ITO Lara, &lsquo;04
+
+/! ******************** MASTERPIECE SECTION ********************
+section.masterpiece.screen.breath data-scroll-index="2"
+  .container
+    .row
+      .small-12.columns
+        .section-title
+          i.fa.fa-quote-left.wow.fade-in-left data-wow-delay="0.6s"
+          h1.wow.fade-in-left data-wow-delay="0.3s" = t(:masterpiece)
+
+/! ******************** TEAM SECTION ********************
+section#team.team.screen.breath data-scroll-index="3"
+  .container
+    .row
+      .small-12.columns
+        .section-title
+          /! <i class="fa fa-cogs wow fade-in-down" data-wow-delay="0.2s"></i
+          h2.wow.fade-in-left data-wow-delay="0.3s" = t(:family)
+          p.lead.wow.fade-in-right data-wow-delay="0.5s" = t(:family_sub)
+        section.row
+          .small-12.medium-6.large-3.columns
+            .teamblock.wow.fade-in-left data-wow-delay="0.3s"
+              img alt="analytics-icon" src=imgurl("bio_munif.png")
+                .caption
+                  h3 Munif Ahmad
+                  p= t(:bio_munif)
+          .small-12.medium-6.large-3.columns
+            .teamblock.wow.fade-in-up data-wow-delay="0.4s"
+              img alt="analytics-icon" src=imgurl("bio_amir.png")
+                .caption
+                  h3 Amir Arshad
+                  p= t(:bio_amir)
+          .small-12.medium-6.large-3.columns
+            .teamblock.wow.fade-in-up data-wow-delay="0.5s"
+              img alt="analytics-icon" src=imgurl("bio_wan.png")
+                .caption
+                  h3 Wan Saleh
+                  p= t(:bio_wan)
+          .small-12.medium-6.large-3.columns
+            .teamblock.wow.fade-in-right data-wow-delay="0.6s"
+              img alt="analytics-icon" src=imgurl("bio_taq.png")
+                .caption
+                  h3 Nurtaqwa Othman
+                  p= t(:bio_taqwa)
+
+/! ******************** GMAPS ********************
+section#maps.gmaps.hide-for-small-only data-scroll-index="4"
+  #gmap
+
+/! ******************** FOOTER ********************
+footer.container data-scroll-index="5"
+  .row
+    .large-12.columns.text-center
+      h1= t(:footer1)
+      h2.subheader= t(:footer2)
+      .social
+        a href="http://facebook.com/minufhijjazproduction"
+          img alt="" src=imgurl("social/facebook-a.svg") /
+        a href="http://twitter.com/MunifHijjazPro"
+          img alt="" src=imgurl("social/twitter1-a.svg") /
+        a href="http://instagram.com/munifhijjazpro"
+          img alt="" src=imgurl("social/youtube-a.svg") /
+        a href="http://www.youtube.com/channel/UCJFnl-ePHMYSTrMf45HX6wg"
+          img alt="" src=imgurl("social/instagram-a.svg") /
+  .row
+    .medium-6.large-6.columns.footer-address.text-left.small-only-text-center
+      p
+        = t(:footer_address)
+    .medium-6.large-6.columns.footer-links.text-right.small-only-text-center
+      h3
+        | &copy; 2014 #{t(:reserved)}
+      h4
+        = t(:footer_by)
+        = data.site.title
