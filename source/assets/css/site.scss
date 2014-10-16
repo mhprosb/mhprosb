@@ -255,6 +255,7 @@ svg circle {
   padding: rem-calc(80) rem-calc(15);
   text-align: center;
   height: 100%;
+  min-height: 1000px;
 
   .container {
     @include center-v;
@@ -296,6 +297,7 @@ svg circle {
     letter-spacing: .2em;
     font-weight: 600;
     text-transform: uppercase;
+    border-radius: 2rem;
 
     @media #{$small-only} {
       font-size: 1em;
@@ -338,10 +340,13 @@ svg circle {
 
   @media #{$medium-only} {
     padding: rem-calc(40) rem-calc(15);
+    min-height: 800px;
   }
 
   @media #{$small-only} {
+    padding: rem-calc(40) rem-calc(15);
     background-attachment: scroll;
+    min-height: initial;
   }
 }
 
@@ -689,9 +694,5 @@ footer {
 @media #{$small-only} {
   .masthead, .hero, .masterpiece {
     height: auto;
-  }
-
-  .masthead .container {
-    @include center-v(false);
   }
 }
